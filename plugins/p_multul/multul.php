@@ -19,8 +19,7 @@ class Multul {
 			'random'		=> rand(10, 1000),
 			'v'				=> 1,
 		);
-//		$this->js_src = 'http://cdn.multul.ru/v' . $this->config['v'] . '/js/im.js';
-		$this->js_src = 'http://cdn.multul.lh/v' . $this->config['v'] . '/js/im.js';
+		$this->js_src = 'http://cdn.multul.ru/v' . $this->config['v'] . '/js/im.js';
 		$this->config = array_merge($this->config, $config);
 	}
 
