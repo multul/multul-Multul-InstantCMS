@@ -41,7 +41,7 @@ class Multul {
 			if ($key == 'secret_key'){
 				continue;
 			}
-			$params[$key] = urlencode($value);
+			$params[$key] = $value;
 		}
 		return http_build_query($params) . '&sig=' . $this->get_sig($params, $config['secret_key']);
 	}
