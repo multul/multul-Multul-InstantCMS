@@ -5,11 +5,24 @@
 4. Нажмите кнопку Установить плагин
 5. Выберите из предложенных плагинов "Мессенджер Multul"
 6. Войдите в редактирование плагина и укажите app_id и secret_key, полученные при добавления приложения в multul.ru
-7. В файл templates/ВАШ_ШАБЛОН/components/com_users_profile.tpl добавьте следующий код:
+7. В файл templates/ВАШ_ШАБЛОН/components/com_users_profile.tpl заменить код:
+
 {if !$myprofile}
-<tr>
-	<td><img src="/templates/_default_/images/icons/profile/message.png" border="0"/></td>
-	<td><a onclick="multul.im.openContact({$usr.id}, '{$usr.nickname}')" href="javascript:;">{$LANG.WRITE_MESS}</a></td>
-</tr>
+  <tr>
+    <td><img src="/templates/_default_/images/icons/profile/message.png" border="0"/></td>
+    <td><a href="/users/{$usr.id}/sendmessage.html" title="{$LANG.WRITE_MESS}">{$LANG.WRITE_MESS}</a></td>
+  </tr>
+{/if}
+
+На код:
+{if !$myprofile}
+  <tr>
+    <td><img src="/templates/_default_/images/icons/profile/message.png" border="0"/></td>
+    <td><a onclick="multul.im.openContact({$usr.id}, '{$usr.nickname}')" href="javascript:;">Написать в мессенджер</a></td>
+  </tr>
+  <tr>
+    <td><img src="/templates/_default_/images/icons/profile/message.png" border="0"/></td>
+    <td><a href="/users/{$usr.id}/sendmessage.html" title="{$LANG.WRITE_MESS}">{$LANG.WRITE_MESS}</a></td>
+  </tr>
 {/if}
 8. Включите плагин
